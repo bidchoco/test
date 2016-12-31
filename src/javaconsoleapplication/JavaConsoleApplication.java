@@ -40,7 +40,7 @@ public class JavaConsoleApplication {
         return isBalanced;
     }
     
-    //Dec 10 2016 Qno. 1//
+    //Dec 10 2016 Qno. 1 //
     
     public static int countDigit(int a, int num){
         int count = 0;
