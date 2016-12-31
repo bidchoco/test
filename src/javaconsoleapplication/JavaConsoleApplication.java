@@ -16,6 +16,7 @@ public class JavaConsoleApplication {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+
         int[] a = {3, 3, 2, 6, 7};
           System.out.println(isTwinoid(a));
           //System.out.println(countDigit(1320003334, 3));
@@ -38,7 +39,10 @@ public class JavaConsoleApplication {
         return isTwinoid;
     }
     
+
+        
     
+
     //Nov 26 2016 Qno 3//
     
     public static int isBalanced(int[] a){
@@ -59,8 +63,8 @@ public class JavaConsoleApplication {
         return isBalanced;
     }
     
-    //Dec 10 2016 Qno. 1  //
-    
+    //Dec 10 2016 Qno. 1 //
+
     public static int countDigit(int a, int num){
         int count = 0;
         while(a%10!=0 || a/10 > 0) {
