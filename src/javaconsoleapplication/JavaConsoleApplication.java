@@ -17,11 +17,49 @@ public class JavaConsoleApplication {
     public static void main(String[] args) {
         // TODO code application logic here
 
-        int[] a = {4, 2, -3, 12};
-          //System.out.println(isSuper(a));
+        int[] a = {4, 9, 8,777};
+          System.out.println(isFancy(61));
           //System.out.println(isEvenSubset(8, 12));
           
     }
+    
+    //October 1st, 2016 Qno 1//
+    public static int isFancy(int a){
+        int fancy = 1;
+        int x=1;
+        int y=1;
+        if(a==1)
+            return 1;
+        while(fancy < a){
+            fancy = x*2 + y*3;
+            x=y;
+            y=fancy;
+            if(a==fancy)
+                return 1;            
+        }
+         return 0;
+    }
+    
+    //October 1st, 2016 Qno 3//
+    public static int isBean(int[] a){
+        int isBean = 0;
+        boolean finalBreak = false;
+        for(int i = 0; i<a.length; i++){
+            if(finalBreak)
+                break;
+            for(int j = 0; j<a.length; j++){
+                if(a[i]== 2*a[j] || a[i] == 2*a[j]+1 || a[i] == a[j]/2 ){
+                    isBean = 1;
+                    break;
+                }
+                isBean = 0;
+                if(j==a.length -1 && isBean == 0)
+                    finalBreak = true;                
+            }
+        }
+        return isBean;
+    }
+    
     //October 29th, 2016 Qno 1//
     public static int[] fill(int[] a, int k, int n){
         int[] arr = new int[n];
@@ -121,10 +159,12 @@ public class JavaConsoleApplication {
             for(int j = 0; j<a.length; j++){
                 if(a[i] == -a[j]){
                     isBalanced = 1;
-                    continue;
+                    break;
                 }
-                if(j==a.length -1 && isBalanced == 0)
-                    finalBreak = true;                
+                isBalanced = 0;
+                if(j==a.length -1 && isBalanced == 0){
+                    finalBreak = true;
+                }               
             }
         }
         return isBalanced;
