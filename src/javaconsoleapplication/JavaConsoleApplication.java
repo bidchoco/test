@@ -23,6 +23,42 @@ public class JavaConsoleApplication {
           
     }
     
+    // Sept 3rd 2016 QNo 1//
+    public static int factorTwoCount(int a){
+            int count = 0;
+            while (a % 2 == 0)
+            {
+                count++;
+                a /= 2;
+            }
+            return count;
+        }
+    // Sept 3rd 2016 QNo 3//
+        public static int goodSpread(int[] a)
+        {
+            int goodSpread = 1;
+            int currentCount = 0;
+            boolean finalBreak = false;
+            for (int i = 0; i < a.length; i++)
+            {
+                if (finalBreak)
+                    break;
+                currentCount = 0;
+                for (int j = 0; j < a.length; j++)
+                {
+                    if (a[i] == a[j])
+                        currentCount++;
+                    if (currentCount > 3)
+                    {
+                        finalBreak = true;
+                        goodSpread = 0;
+                        break;
+                    }
+                }
+            }
+            return goodSpread;
+        }
+    
     //October 1st, 2016 Qno 1//
     public static int isFancy(int a){
         int fancy = 1;
