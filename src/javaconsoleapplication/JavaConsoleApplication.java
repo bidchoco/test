@@ -23,6 +23,45 @@ public class JavaConsoleApplication {
           
     }
     
+    //July 30 2016 QNo 1//
+        public static int mostOccourDigit(int a)
+        {
+            int[] occourance = new int[10];
+            while (a != 0)
+            {
+                occourance[a % 10]++;
+                a =a/10;
+            }
+            int max = occourance[0];
+            int index = -1;
+            for (int i = 0; i < occourance.Length; i++)
+            {
+                if (occourance[i] > max)
+                {
+                    index = i;
+                    max = occourance[i];
+                }
+                else if (occourance[i] == max)
+                    index = -1;
+            }
+            return index;
+        }
+
+        // 20 Aug 2016 QNo 3//
+        public static int isSym(int[] a)
+        {
+            int isSym = 1;
+            for (int i = 0; i <= a.length/2; i++)
+            {
+                if (a[i] % 2 == a[a.length -1 - i] % 2)
+                    continue;
+                isSym = 0;
+                break;
+            }
+                return isSym;
+        }
+    
+
     // Sept 3rd 2016 QNo 1//
     public static int factorTwoCount(int a){
             int count = 0;
