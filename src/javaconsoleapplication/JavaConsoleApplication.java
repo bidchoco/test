@@ -34,7 +34,7 @@ public class JavaConsoleApplication {
             }
             int max = occourance[0];
             int index = -1;
-            for (int i = 0; i < occourance.Length; i++)
+            for (int i = 0; i < occourance.length; i++)
             {
                 if (occourance[i] > max)
                 {
