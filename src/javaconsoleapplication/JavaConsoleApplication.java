@@ -22,6 +22,122 @@ public class JavaConsoleApplication {
           //System.out.println(isEvenSubset(8, 12));
           
     }
+    //18th of June 2016 QNo 1//
+        public static int hasSingleMode(int[] a)
+        {
+            int modeNumber = 0;
+            int modeCount = 0;
+            int currentModeNumber = 0;
+            int currentCount = 0;
+            int hasSingleMode = 0;
+            for (int i = 0; i < a.length; i++)
+            {
+                currentCount = 0;
+                currentModeNumber = a[i];
+                for (int j = 0; j < a.length; j++)
+                {
+                    if (a[j] == currentModeNumber)
+                        currentCount++;
+                }
+                if (currentCount > 1 && modeNumber != a[i] && currentCount >= modeCount)
+                {
+                    if (currentCount == modeCount)
+                        hasSingleMode = 0;
+                    else
+                        hasSingleMode = 1;
+                    modeCount = currentCount;
+                    modeNumber = currentModeNumber;
+                }
+            }
+            if (modeNumber == 0)
+                return 0;
+            return hasSingleMode;
+        }
+        //July 2nd 2016 Qno 1//
+        public static int isPaired(int[] a)
+        {
+            for (int i = 0; i < a.Length; i++)
+            {
+                if ((i % 2 == 0 && a[i] % 2 == 0) || (i % 2 != 0 && a[i] % 2 != 0))
+                    return 0;
+            }
+            return 1;
+        }
+
+        //July 2nd 2016 Qno 2 //
+        public static int isHeavy(int[] a)
+        {
+            boolean hasOdd = false;
+            boolean finalBreak = false;
+            int isHeavy = 1;
+            for (int i = 0; i < a.length; i++)
+            {
+                if (finalBreak)
+                    break;
+                if (a[i] % 2 != 0)
+                {
+                    hasOdd = true;
+                    for (int j = 0; j < a.length; j++)
+                    {
+                        if (a[j] % 2 == 0 && a[j] > a[i])
+                        {
+                            finalBreak = true;
+                            isHeavy = 0;
+                            break;
+                        }
+                    }
+                }
+            }
+            if (hasOdd)
+                return isHeavy;
+            return 0;
+        }
+        //July 2nd 2016 Qno 3//
+        public static int maxDistance(int a)
+        {
+            int lower = 0;
+            int higher = 0;
+            for(int i = 2; i <= a/2; i++)
+            {
+                if (a % i == 0 && lower == 0)
+                    lower = i;
+                else if (a % i == 0)
+                    higher = i;
+            }
+            if (higher != 0)
+                return higher - lower;
+            return 0;
+        }
+        //Aug 20, 2016 Qno 2//
+        public static int isSub(int[] a)
+        {            
+            for (int i = 0; i < a.length; i++)
+            {
+                int sum=0;
+                for (int j = i + 1; j < a.length; j++)
+                {
+                    sum += a[j];
+                }
+                if (sum >= a[i])
+                    return 0;
+            }
+            return 1;
+        }
+
+
+        //July 16, 2016 QNo 1//
+        public static int isMeeraNumber(int a)
+        {
+            int factorCount = 0;
+            for (int i = 2; i <= a/2; i++)
+            {
+                if (a % i == 0)
+                    factorCount++;
+            }
+            if(a%factorCount == 0)
+                return 1;
+            return 0;
+        }
     
     //July 30 2016 QNo 1//
         public static int mostOccourDigit(int a)
