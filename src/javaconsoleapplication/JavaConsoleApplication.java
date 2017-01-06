@@ -22,6 +22,70 @@ public class JavaConsoleApplication {
           //System.out.println(isEvenSubset(8, 12));
           
     }
+    
+        //May 21, 2016 Qno 1//
+        public static int getExponent(int n, int p)
+        {
+            if (p > n && p <= 1)
+                return -1;
+            int count = 0;
+            while(n%p==0 && n !=0){
+                count++;
+                n=n/p;
+            }
+            return count;
+        }
+        //May 21, 2016 Qno 2//
+        public static int is121Array(int[] a)
+        {
+            if(a.Length < 3 && a[0] !=1)
+                return 0;
+            boolean twoStarted = false;
+            for (int i = 0; i <= a.Length/2; i++)
+            {
+                if (!twoStarted && a[i] == 1 && a[i] == a[a.Length - 1 - i])
+                    continue;
+                else if (!twoStarted && a[i] == 2)
+                    twoStarted = true;
+                else if (!twoStarted)
+                    return 0;
+                if (twoStarted && a[i] == 2 && a[i] == a[a.Length - 1 - i])
+                    continue;
+                else if (twoStarted)
+                    return 0;
+            }
+            if(twoStarted)
+                return 1;
+            return 0;
+        }
+        //May 21, 2016 Qno 3//
+        public static int isMaxMinEqual(int[] a)
+        {
+            if (a.length < 2)
+                return 0;
+            int max=a[0], min=a[0], maxCount = 0, minCount = 0;
+            for (int i = 0; i < a.length; i++)
+            {
+                if (a[i] > max)
+                {
+                    max = a[i];
+                    maxCount = 0;
+                }
+                else if(a[i] < min){
+                    min = a[i];
+                    minCount = 0;
+                }
+                if (max == a[i])
+                    maxCount++;
+                if (min == a[i])
+                    minCount++;
+
+            }
+            if (max != min && maxCount == minCount)
+                return 1;
+            return 0;
+
+        }
     //18th of June 2016 QNo 1//
         public static int hasSingleMode(int[] a)
         {
