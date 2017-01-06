@@ -38,18 +38,18 @@ public class JavaConsoleApplication {
         //May 21, 2016 Qno 2//
         public static int is121Array(int[] a)
         {
-            if(a.Length < 3 && a[0] !=1)
+            if(a.length < 3 && a[0] !=1)
                 return 0;
             boolean twoStarted = false;
-            for (int i = 0; i <= a.Length/2; i++)
+            for (int i = 0; i <= a.length/2; i++)
             {
-                if (!twoStarted && a[i] == 1 && a[i] == a[a.Length - 1 - i])
+                if (!twoStarted && a[i] == 1 && a[i] == a[a.length - 1 - i])
                     continue;
                 else if (!twoStarted && a[i] == 2)
                     twoStarted = true;
                 else if (!twoStarted)
                     return 0;
-                if (twoStarted && a[i] == 2 && a[i] == a[a.Length - 1 - i])
+                if (twoStarted && a[i] == 2 && a[i] == a[a.length - 1 - i])
                     continue;
                 else if (twoStarted)
                     return 0;
@@ -120,7 +120,7 @@ public class JavaConsoleApplication {
         //July 2nd 2016 Qno 1//
         public static int isPaired(int[] a)
         {
-            for (int i = 0; i < a.Length; i++)
+            for (int i = 0; i < a.length; i++)
             {
                 if ((i % 2 == 0 && a[i] % 2 == 0) || (i % 2 != 0 && a[i] % 2 != 0))
                     return 0;
